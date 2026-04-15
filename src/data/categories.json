@@ -1,0 +1,5 @@
+[
+  { "id": "electronics", "name": "Electronics", "icon": "📱", "color": "blue" },
+  { "id": "clothing", "name": "Clothing", "icon": "👕", "color": "green" },
+  { "id": "home", "name": "Home & Garden", "icon": "🏠", "color": "purple" }
+]

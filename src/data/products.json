@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Bluetooth Headphones",
+    "price": 299,
+    "category": "electronics",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    "rating": 4.5,
+    "stock": 12,
+    "description": "Premium wireless headphones with noise cancellation and 30-hour battery life."
+  },
+  {
+    "id": 2,
+    "title": "Smart Watch Pro",
+    "price": 199,
+    "category": "electronics",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    "rating": 4.2,
+    "stock": 8,
+    "description": "Fitness tracking smartwatch with heart rate monitor and GPS."
+  },
+  {
+    "id": 3,
+    "title": "Cotton T-Shirt",
+    "price": 29,
+    "category": "clothing",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+    "rating": 4.8,
+    "stock": 25,
+    "description": "100% organic cotton t-shirt, available in multiple colors and sizes."
+  }
+]
