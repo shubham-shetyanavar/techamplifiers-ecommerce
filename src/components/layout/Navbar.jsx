@@ -1,17 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingCart, User, Menu } from "lucide-react";
+import { ShoppingCart, User, Menu, Heart } from "lucide-react";
 import { useState } from "react";
 import Button from "../ui/Button";
 import Container from "../common/Container";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const wishlistCount = useSelector((state) => state.wishlist.items.length);
 
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/products", label: "Products" },
     { to: "/cart", label: "Cart" },
+    { to: "/wishlist", label: "Wishlist" },
   ];
 
   return (
@@ -42,6 +45,17 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex items-center space-x-4">
+              <Link
+                to="/wishlist"
+                className="relative p-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                <Heart className="w-5 h-5" />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-2 -right-2 min-w-[22px] h-[22px] px-1 rounded-full bg-red-500 text-white text-xs flex items-center justify-center">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
               <Button variant="outline" size="sm">
                 <User className="w-4 h-4" />
                 Account

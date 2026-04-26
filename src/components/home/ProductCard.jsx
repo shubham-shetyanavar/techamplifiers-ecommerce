@@ -1,9 +1,15 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
+import { toggleWishlist } from "../../store/Slices/wishlistSlice";
 
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const isWishlisted = wishlistItems.some((item) => item.id === product.id);
+
   const discount = product.originalPrice
     ? Math.round(
         ((product.originalPrice - product.price) / product.originalPrice) * 100,
@@ -18,9 +24,18 @@ const ProductCard = ({ product }) => {
           alt={product.title}
           className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <button className="absolute top-4 right-4 p-2 rounded-full bg-white/90 hover:bg-white text-gray-700 shadow">
-          <Heart className="w-4 h-4" />
+
+        <button
+          onClick={() => dispatch(toggleWishlist(product))}
+          className={`absolute top-4 right-4 p-2 rounded-full shadow ${
+            isWishlisted
+              ? "bg-red-500 text-white"
+              : "bg-white/90 hover:bg-white text-gray-700"
+          }`}
+        >
+          <Heart className={`w-4 h-4 ${isWishlisted ? "fill-current" : ""}`} />
         </button>
+
         {discount > 0 && (
           <div className="absolute top-4 left-4">
             <Badge variant="primary">{discount}% OFF</Badge>
@@ -33,7 +48,7 @@ const ProductCard = ({ product }) => {
           {product.category}
         </p>
 
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
           {product.title}
         </h3>
 

@@ -3,25 +3,31 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Container from "./components/common/Container";
+import Products from "./pages/Products";
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
         <Navbar />
         <main className="flex-1">
-          <Container>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/products"
-                element={<div>Products Page (Lesson 3)</div>}
-              />
-              <Route path="/cart" element={<div>Cart Page (Lesson 5)</div>} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route
+              path="/cart"
+              element={
+                <div className="p-10 text-center">Cart Page (Lesson 5)</div>
+              }
+            />
+            <Route
+              path="/wishlist"
+              element={
+                <div className="p-10 text-center">Wishlist Page (Lesson 5)</div>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
         <Footer />
       </div>
