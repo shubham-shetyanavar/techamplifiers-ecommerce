@@ -70,5 +70,77 @@
     "stock": 16,
     "featured": false,
     "description": "Lightweight sneakers built for comfort and everyday movement."
+  },
+  {
+    "id": 7,
+    "title": "Ceramic Coffee Mug",
+    "price": 24,
+    "originalPrice": 30,
+    "category": "home",
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.1,
+    "stock": 30,
+    "featured": false,
+    "description": "Minimal handcrafted mug designed for your everyday coffee ritual."
+  },
+  {
+    "id": 8,
+    "title": "Portable Bluetooth Speaker",
+    "price": 149,
+    "originalPrice": 179,
+    "category": "electronics",
+    "image": "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.3,
+    "stock": 14,
+    "featured": false,
+    "description": "Compact wireless speaker with deep bass and water resistance."
+  },
+  {
+    "id": 9,
+    "title": "Organic Face Serum",
+    "price": 69,
+    "originalPrice": 89,
+    "category": "beauty",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "stock": 11,
+    "featured": false,
+    "description": "Brightening serum crafted for daily skincare routines."
+  },
+  {
+    "id": 10,
+    "title": "Oversized Hoodie",
+    "price": 79,
+    "originalPrice": 99,
+    "category": "clothing",
+    "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.4,
+    "stock": 20,
+    "featured": false,
+    "description": "Soft oversized hoodie with premium fabric and relaxed fit."
+  },
+  {
+    "id": 11,
+    "title": "Decor Vase Set",
+    "price": 54,
+    "originalPrice": 68,
+    "category": "home",
+    "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.0,
+    "stock": 9,
+    "featured": false,
+    "description": "Elegant ceramic vase set to elevate any interior shelf."
+  },
+  {
+    "id": 12,
+    "title": "Hair Care Essentials Pack",
+    "price": 95,
+    "originalPrice": 120,
+    "category": "beauty",
+    "image": "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.5,
+    "stock": 13,
+    "featured": false,
+    "description": "A premium hair care bundle for nourishment and shine."
   }
 ]
