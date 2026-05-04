@@ -1,9 +1,10 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
-import { toggleWishlist } from "../../store/Slices/wishlistSlice";
+import { toggleWishlist } from "../../store/slices/wishlistSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -17,13 +18,15 @@ const ProductCard = ({ product }) => {
     : 0;
 
   return (
-    <Card className="group h-full" hoverable>
-      <div className="relative overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+    <Card className="group h-full overflow-hidden" hoverable>
+      <div className="relative">
+        <Link to={`/products/${product.id}`}>
+          <img
+            src={product.image}
+            alt={product.title}
+            className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </Link>
 
         <button
           onClick={() => dispatch(toggleWishlist(product))}
@@ -48,9 +51,11 @@ const ProductCard = ({ product }) => {
           {product.category}
         </p>
 
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-          {product.title}
-        </h3>
+        <Link to={`/products/${product.id}`}>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 hover:text-blue-600 transition-colors">
+            {product.title}
+          </h3>
+        </Link>
 
         <div className="flex items-center gap-2 mb-3">
           <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />

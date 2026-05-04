@@ -4,6 +4,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <div className="p-10 text-center">Cart Page (Lesson 5)</div>
               }
             />
+            <Route path="/products/:id" element={<ProductDetails />} />
             <Route
               path="/wishlist"
               element={
