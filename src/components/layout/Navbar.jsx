@@ -1,5 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingCart, User, Menu, Heart } from "lucide-react";
+import {
+  ShoppingCart,
+  User,
+  Menu,
+  Heart,
+  ShoppingCartIcon,
+} from "lucide-react";
 import { useState } from "react";
 import Button from "../ui/Button";
 import Container from "../common/Container";
@@ -9,11 +15,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const wishlistCount = useSelector((state) => state.wishlist.items.length);
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/products", label: "Products" },
-    { to: "/cart", label: "Cart" },
     { to: "/wishlist", label: "Wishlist" },
   ];
 
@@ -60,10 +67,20 @@ const Navbar = () => {
                 <User className="w-4 h-4" />
                 Account
               </Button>
-              <Button size="sm">
-                <ShoppingCart className="w-4 h-4" />
-                Cart (0)
-              </Button>
+
+              <Link
+                to="/cart"
+                className="relative hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                <Button size="sm">
+                  <ShoppingCart className="w-4 h-4" />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 min-w-[22px] h-[22px] px-1 rounded-full bg-red-600 text-white text-xs flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
+                </Button>
+              </Link>
             </div>
           </div>
 
