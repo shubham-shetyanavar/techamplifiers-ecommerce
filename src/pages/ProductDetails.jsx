@@ -11,7 +11,7 @@ import ReviewsSection from "../components/products/ReviewsSection";
 import RelatedProducts from "../components/products/RelatedProducts";
 import { toggleWishlist } from "../store/slices/wishlistSlice";
 import QuantitySelector from "../components/products/QuantitySelector";
-
+import { addToCart } from "../store/Slices/cartSlice";
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -138,7 +138,10 @@ const ProductDetails = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button className="flex-1">
+              <Button
+                className="flex-1"
+                onClick={() => dispatch(addToCart({ product, quantity }))}
+              >
                 <ShoppingCart className="w-5 h-5" />
                 Add {quantity} to Cart
               </Button>

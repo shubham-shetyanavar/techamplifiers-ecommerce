@@ -5,6 +5,7 @@ import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import { toggleWishlist } from "../../store/slices/wishlistSlice";
+import { addToCart } from "../../store/slices/cartSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -78,7 +79,10 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        <Button className="mt-auto w-full">
+        <Button
+          className="mt-auto w-full"
+          onClick={() => dispatch(addToCart({ product, quantity: 1 }))}
+        >
           <ShoppingCart className="w-4 h-4" />
           Add to Cart
         </Button>
