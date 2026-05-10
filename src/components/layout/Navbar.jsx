@@ -5,11 +5,14 @@ import {
   Menu,
   Heart,
   ShoppingCartIcon,
+  LogIn,
+  LogOut,
 } from "lucide-react";
 import { useState } from "react";
 import Button from "../ui/Button";
 import Container from "../common/Container";
 import { useSelector } from "react-redux";
+import useAuth from "../../hook/useAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +20,7 @@ const Navbar = () => {
   const wishlistCount = useSelector((state) => state.wishlist.items.length);
   const cartItems = useSelector((state) => state.cart.items);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const { currentUser, isAuthenticated, logout } = useAuth();
 
   const navItems = [
     { to: "/", label: "Home" },
@@ -63,10 +67,37 @@ const Navbar = () => {
                   </span>
                 )}
               </Link>
-              <Button variant="outline" size="sm">
-                <User className="w-4 h-4" />
-                Account
-              </Button>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    to="/profile"
+                    className="rounded-xl border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+                  >
+                    {currentUser?.name}
+                  </Link>
+
+                  {currentUser?.role === "admin" && (
+                    <Link
+                      to="/admin"
+                      className="rounded-xl border border-gray-200 dark:border-gray-700 px-4 py-3 font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+                    >
+                      Admin
+                    </Link>
+                  )}
+
+                  <Button variant="outline" size="sm" onClick={logout}>
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <Link to="/login">
+                  <Button variant="secondary" size="sm">
+                    <LogIn className="w-4 h-4" />
+                    Login
+                  </Button>
+                </Link>
+              )}
 
               <Link
                 to="/cart"

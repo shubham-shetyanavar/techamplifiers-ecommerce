@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../store/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 const CartSummary = ({ subtotal, shipping, tax, total }) => {
   const dispatch = useDispatch();
@@ -31,10 +32,12 @@ const CartSummary = ({ subtotal, shipping, tax, total }) => {
           <span>${total.toFixed(2)}</span>
         </div>
       </div>
-
-      <button className="w-full mt-6 rounded-xl bg-blue-600 px-5 py-3 text-white font-medium hover:bg-blue-700">
+      <Link
+        to="/checkout"
+        className="inline-flex justify-center items-center w-full rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 transition mt-6"
+      >
         Proceed to Checkout
-      </button>
+      </Link>
 
       <button
         onClick={() => dispatch(clearCart())}
