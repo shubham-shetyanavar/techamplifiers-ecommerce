@@ -4,6 +4,7 @@ import Container from "../components/common/Container";
 import CartItem from "../components/cart/CartItem";
 import CartSummary from "../components/cart/CartSummary";
 import EmptyCart from "../components/cart/EmptyCart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);

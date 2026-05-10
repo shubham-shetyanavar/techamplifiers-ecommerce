@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
-import { toggleWishlist } from "../../store/slices/wishlistSlice";
-import { addToCart } from "../../store/slices/cartSlice";
+import { toggleWishlist } from "../../store/Slices/wishlistSlice";
+import { addToCart } from "../../store/Slices/cartSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import Button from "../components/ui/Button";
 import Badge from "../components/ui/Badge";
 import ReviewsSection from "../components/products/ReviewsSection";
 import RelatedProducts from "../components/products/RelatedProducts";
-import { toggleWishlist } from "../store/slices/wishlistSlice";
+import { toggleWishlist } from "../store/Slices/wishlistSlice";
 import QuantitySelector from "../components/products/QuantitySelector";
 import { addToCart } from "../store/Slices/cartSlice";
 const ProductDetails = () => {
