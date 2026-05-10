@@ -4,7 +4,7 @@ import Container from "../components/common/Container";
 import CheckoutForm from "../components/checkout/CheckoutForm";
 import OrderSummary from "../components/checkout/OrderSummary";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from "../store/slices/cartSlice";
+import { clearCart } from "../store/Slices/cartSlice";
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);

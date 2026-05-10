@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { clearCart } from "../../store/slices/cartSlice";
+import { clearCart } from "../../store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 
 const CartSummary = ({ subtotal, shipping, tax, total }) => {

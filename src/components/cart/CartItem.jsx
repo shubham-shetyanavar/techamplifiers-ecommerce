@@ -4,7 +4,7 @@ import {
   decrementQuantity,
   incrementQuantity,
   removeFromCart,
-} from "../../store/slices/cartSlice";
+} from "../../store/Slices/cartSlice";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
